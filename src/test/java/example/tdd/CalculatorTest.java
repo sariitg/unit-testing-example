@@ -1,6 +1,7 @@
 package example.tdd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,9 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDivide_divideByZero() {
-        assertEquals(Double.POSITIVE_INFINITY, calculator.divide(168, 0));
+    public void testDivide_byZero() {
+        assertThrows(ArithmeticException.class, () -> {
+            calculator.divide(102, 0);
+        });
     }
 }

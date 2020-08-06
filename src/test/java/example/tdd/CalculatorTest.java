@@ -18,7 +18,17 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDivide() {
-        assertEquals(1, calculator.divide(2.0, 2.0));
+    public void testDivide_wholeNumber() {
+        assertEquals(1, calculator.divide(2, 2));
+    }
+
+    @Test
+    public void testDivide_decimal() {
+        assertEquals(4, calculator.divide(10, 2.5));
+    }
+
+    @Test
+    public void testDivide_divideByZero() {
+        assertEquals(Double.POSITIVE_INFINITY, calculator.divide(168, 0));
     }
 }

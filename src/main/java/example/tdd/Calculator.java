@@ -2,7 +2,7 @@ package example.tdd;
 
 public class Calculator {
 
-    public double divide(double x, double y) {
+    public int divide(int x, int y) {
         return x / y;
     }
     
